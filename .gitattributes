@@ -1,0 +1,8 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+* text=auto
+
+*.java text
+*.md text
+*.yml text
+*.properties text
