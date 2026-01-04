@@ -5,7 +5,7 @@ import com.gestor.itsm.service.TicketService;
 import com.gestor.itsm.model.EstadoTickete;
 import com.gestor.itsm.model.PrioridadTicket;
 import com.gestor.itsm.model.Ticket;
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/tickets")
@@ -58,18 +58,6 @@ public class TicketController {
          @PutMapping("/{id}/cerrar") 
         public Ticket cerrarTicket(@PathVariable Long id) { 
             return ticketService.cerrarTicket(id);
-        }
-
-        //Obtener todos los tickets
-        @GetMapping
-        public List<Ticket> obtenerTodosLosTickets() {
-        return ticketService.obtenerTodosLosTickets();
-        }
-
-        //Obtener ticket por ID
-        @GetMapping("/{id}")
-        public Ticket obtenerTicketPorId(@PathVariable Long id) {
-        return ticketService.obtenerTicketPorId(id);
         }
 
         //Endpoint de prueba
