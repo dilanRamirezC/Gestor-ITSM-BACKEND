@@ -1,5 +1,6 @@
 package com.gestor.itsm.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -12,7 +13,7 @@ import jakarta.persistence.Table;
  * Esta entidad se mapea a la tabla "clientes" en la base de datos.
  */
 
-
+@Schema(description = "Entidad que representa un Cliente en el sistema ITSM")
 @Entity
 @Table(name = "clientes")
 

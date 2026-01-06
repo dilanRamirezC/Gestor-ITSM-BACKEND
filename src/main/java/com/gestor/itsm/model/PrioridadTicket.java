@@ -1,5 +1,7 @@
 package com.gestor.itsm.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * Enum que representa los niveles de prioridad que puede tener un ticket en el sistema ITSM.
  * Esto ayuda a determinar la urgencia con la que un ticket debe ser atendido.
@@ -11,7 +13,7 @@ package com.gestor.itsm.model;
  * 
  */
 
-
+@Schema(description = "Enum que representa los niveles de prioridad de un Ticket en el sistema ITSM")
 public enum PrioridadTicket {
     /** Ticket de baja prioridad */
     BAJA,

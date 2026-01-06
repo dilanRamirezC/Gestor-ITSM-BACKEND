@@ -1,6 +1,8 @@
 
 package com.gestor.itsm.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /*
  * Enum que representa los posibles estados de un ticket en el sistema ITSM.
  * Los estados definidos son:
@@ -9,7 +11,7 @@ package com.gestor.itsm.model;
  *      RESUELTO: El ticket ha sido solucionado o cerrado.
  */
 
-
+@Schema(description = "Enum que representa los posibles estados de un Ticket en el sistema ITSM")
 public enum EstadoTickete {
     /** Ticket recién creado, pendiente de atención */
     ABIERTO,

@@ -3,6 +3,8 @@ package com.gestor.itsm.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 /**
  * Representa un ticket en el sistema ITSM.
@@ -13,27 +15,32 @@ import java.time.LocalDateTime;
  */
 
 
-
+@Schema(description = "Entidad que representa un Ticket en el sistema ITSM")
 @Entity
 @Table(name = "tickets")
 public class Ticket {
  
     /** Identificador único del ticket, autogenerado */  
+ @Schema(description = "Identificador único del ticket", example = "1")
  @Id 
  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
      /** Título breve del ticket */
+    @Schema(description = "Título breve del ticket", example = "Falla en el acceso al correo") 
     private String titulo;
-
+  
     /** Descripción detallada del problema reportado */
+    @Schema(description = "Descripción detallada del problema reportado", example = "No puedo acceder a mi correo electrónico desde ayer.")
     private String descripcion;
 
     /** Estado actual del ticket */
+    @Schema(description = "Estado actual del ticket", example = "ABIERTO")
     @Enumerated(EnumType.STRING)
     private EstadoTickete estado;
 
     /** Prioridad asignada al ticket */
+    @Schema(description = "Prioridad asignada al ticket", example = "ALTA")
     @Enumerated(EnumType.STRING)
     private PrioridadTicket prioridad;
 
@@ -41,12 +48,14 @@ public class Ticket {
     private LocalDateTime fechaCreacion;
    
     /** Relación muchos-a-uno con Cliente: muchos tickets pueden pertenecer a un cliente */
+    @Schema(description = "Cliente que reportó el ticket")
     @ManyToOne
     @JoinColumn(name = "cliente_id")
 
     private Cliente cliente;
    
     /** Relación muchos-a-uno con Tecnico: muchos tickets pueden ser asignados a un técnico */
+    @Schema(description = "Técnico asignado al ticket")
     @ManyToOne
     @JoinColumn(name = "tecnico_id")
     private Tecnico tecnico;

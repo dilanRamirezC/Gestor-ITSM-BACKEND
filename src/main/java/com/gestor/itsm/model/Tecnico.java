@@ -1,5 +1,6 @@
 package com.gestor.itsm.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -10,7 +11,7 @@ import jakarta.persistence.Table;
  * Esta entidad se mapea a la tabla "tecnicos" en la base de datos.
  * Además, contiene atributos específicos de los técnicos, como su área de soporte y nivel.
  */
-
+@Schema(description = "Entidad que representa un Técnico en el sistema ITSM")
 @Entity
 @Table(name = "tecnicos")
 public class Tecnico extends Usuario {
@@ -18,9 +19,11 @@ public class Tecnico extends Usuario {
     /*atributos específicos de Técnico */
 
     /** Área de soporte a la que pertenece el técnico */
+    @Schema(description = "Área de soporte del técnico", example = "Redes")
     private String areaSoporte;
 
     /** Nivel del técnico (por ejemplo, Junior, Senior) */
+    @Schema(description = "Nivel del técnico", example = "Senior")
     private String nivel;
 
 
@@ -33,7 +36,6 @@ public class Tecnico extends Usuario {
     }
 
     //* Constructor parametrizado para crear un Técnico con todos los atributos. */
-
     public Tecnico(Long id, String nombre, String email, String telefono, String areaSoporte, String nivel) {
         super(id, nombre, email, telefono);
         this.areaSoporte = areaSoporte;

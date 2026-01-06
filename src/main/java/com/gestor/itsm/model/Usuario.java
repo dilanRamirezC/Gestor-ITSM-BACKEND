@@ -1,6 +1,7 @@
 package com.gestor.itsm.model;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,7 +16,7 @@ import jakarta.persistence.MappedSuperclass;
  * para Usuario, pero sus atributos serán heredados por las entidades hijas.
  */
 
-
+@Schema(description = "Entidad base que representa un Usuario en el sistema ITSM")  
 @MappedSuperclass
 public abstract class Usuario {
     
@@ -23,17 +24,21 @@ public abstract class Usuario {
     //Atributos comunes
 
     /** Identificador único del usuario, autogenerado */
+    @Schema(description = "Identificador único del usuario", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
     /** Nombre completo del usuario */
+    @Schema(description = "Nombre completo del usuario", example = "Juan Pérez")
     protected String nombre;
 
     /** Correo electrónico del usuario */
+    @Schema(description = "Correo electrónico del usuario", example = "example@gmail.com")
     protected String email;
 
     /** Número de teléfono del usuario */
+    @Schema(description = "Número de teléfono del usuario", example = "+123456789")
     protected String telefono;
 
     /**
