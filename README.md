@@ -103,29 +103,6 @@ Swagger documenta:
 
 ---
 
-## Estructura del proyecto
-
-src/main/java/com/gestor/itsm
-│
-├── controller
-│ ├── ClienteController
-│ ├── TecnicoController
-│ └── TicketController
-│
-├── model
-│ ├── Usuario
-│ ├── Cliente
-│ ├── Tecnico
-│ ├── Ticket
-│ └── enums
-│
-├── repository
-├── service
-└── config
-
-
----
-
 ##  Decisiones técnicas destacadas
 
 - Uso de **herencia (Usuario → Cliente / Técnico)** para reutilizar atributos comunes
